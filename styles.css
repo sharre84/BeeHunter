@@ -1,15 +1,15 @@
 body {
     background-color: black;
+    transition: all 1s;
 }
 
 img {
   margin-left: 30px;
   margin-top: 50px;
   position: absolute;
-
 }
 
-  h1 {
+h1 {
     text-align: center;
     color: white;
   }
@@ -25,3 +25,21 @@ img {
 
 
   }
+
+#scoreBoard {
+  width: 50px;
+  height: 50px;
+  border: 10px solid red;
+  position: absolute;
+  color: white;
+
+}
+
+#countdown {
+    color: white;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
