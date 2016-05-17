@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+img {
+  margin-left: 30px;
+  margin-top: 50px;
+  position: absolute;
+
+}
+
+  h1 {
+    text-align: center;
+    color: white;
+  }
+
+#container {
+    height: 724px;
+    width: 1024px;
+    border: 10px solid white;
+    margin: 0 auto;
+    background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+    cursor: url("images/chred.png"), auto;
+
+
+  }
