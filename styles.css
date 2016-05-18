@@ -1,13 +1,24 @@
 body {
     background-color: black;
     color: white;
+}
 
+button {
+  height: 60px;
+  width: 75px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 40px;
 }
 
 img {
   margin-left: 30px;
   margin-top: 50px;
   position: absolute;
+}
+
+h1 {
+  text-align: center;
 }
 
 #container {
@@ -26,9 +37,9 @@ img {
 #scoreBoard {
   font-size: 30px;
   position: absolute;
-  text-align: center;
   font-weight: bold;
   color: red;
+  margin-left: 6px;
 
 }
 #scoreBoard2 {
@@ -37,13 +48,21 @@ img {
   text-align: center;
   font-weight: bold;
   color: red;
+  margin-left: 6px;
 
 }
 
 #countdown {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
-    float: right;
+    float: left;
     color: blue;
+    margin-top: 2px;
+    margin-left: 6px;
+}
 
+h3 {
+  font-size: 25px;
+  color: white;
+  margin-top: 75px;
 }
