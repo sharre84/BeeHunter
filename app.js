@@ -1,25 +1,46 @@
-  function changeImage() {
-    var image = document.getElementById('myImage');
-    if (image.src.match("bee2")) {
-        image.src = "images/bee123.gif";
-    } else {
-        image.src = "images/bee2.gif";
-    }
+//   function changeImage() {
+//     var image = document.getElementById('myImage');
+//     if (image.src.match("bee2")) {
+//         image.src = "images/bee123.gif";
+//     } else {
+//         image.src = "images/bee2.gif";
+//     }
+// }
+
+var game = {
+  player1: {
+    score: 0,
+    scoreBoard: document.querySelector("#scoreBoard")
+  },
+  player2: {
+    score: 0,
+    scoreBoard: document.querySelector("#scoreBoard2")
+  },
+  currentPlayer: null
 }
+
+game.currentPlayer = game.player1
+
+function switchTurns() {
+  if (game.currentPlayer == game.player1) {
+    game.currentPlayer = game.player2;
+  } else {
+    game.currentPlayer = game.player1;
+  }
+}
+
 
 var body = $("body")
 var container = $("#container")
-// var myImg = document.querySelector('img')
 var newPosY = Math.random() * 600;
 var newPosX = Math.random() * 800;
-var score = 0;
+// var score = 0;
 var $scoreBoard = $('#scoreBoard')
+var $scoreBoard2 = $('#scoreBoard2')
+var counter = 0;
 
 $("#container").parent().css({position: 'relative'});
 $("#container").css({top: 100, left: 100, position:'absolute'});
-
-// myImg.style.top = newPosY + "px";
-// myImg.style.left = newPosX + "px";
 
 function Bee(dateCreated){
   this.dateCreated = dateCreated;
@@ -31,23 +52,31 @@ function Bee(dateCreated){
   this.$selector.attr('style', 'top:' + this.y + 'px;left:' + this.x + 'px;')
 
   this.$selector.on('click', function(){
-    score ++
-    new Bee(Date.now())
-    $scoreBoard.html(score)
-    $(this).remove()
-  })
-
+    if(game.currentPlayer == game.player1) {
+      game.player1.score ++
+      new Bee(Date.now())
+      $scoreBoard.html(game.player1.score)
+      $(this).remove()
+      }
+      else if (game.currentPlayer == game.player2) {
+        game.player2.score ++
+      new Bee(Date.now())
+      $scoreBoard2.html(game.player2.score)
+      $(this).remove()
+      if (counter == 0) {
+        $('#countdown').html(15)
+        countdown()
+        counter ++
+      }
+      }
+    })
 }
+
 
 var bee1 = new Bee(Date.now())
 var bee2 = new Bee(Date.now())
 var bee3 = new Bee(Date.now())
 var bee4 = new Bee(Date.now())
-var bee5 = new Bee(Date.now())
-var bee6 = new Bee(Date.now())
-var bee7 = new Bee(Date.now())
-var bee8 = new Bee(Date.now())
-
 
 
 // countdown timer
@@ -61,7 +90,8 @@ var seconds;
     if (seconds == 1) {
       temp = document.getElementById('countdown');
       temp.innerHTML = "GAME OVER";
-      alert(score)
+      alert("You managed to shoot " + game.player1.score + " bees.")
+      switchTurns()
       return;
     }
 
@@ -70,5 +100,7 @@ var seconds;
     temp.innerHTML = seconds;
     timeoutMyOswego = setTimeout(countdown, 1000);
   }
-
   countdown();
+
+
+  // reset button

@@ -1,6 +1,7 @@
 body {
     background-color: black;
-    transition: all 1s;
+    color: white;
+
 }
 
 img {
@@ -9,37 +10,40 @@ img {
   position: absolute;
 }
 
-h1 {
-    text-align: center;
-    color: white;
-  }
-
 #container {
     height: 724px;
     width: 1024px;
-    border: 10px solid white;
+    border: 5px solid white;
     margin: 0 auto;
     background-image: url("images/bg.png");
     background-repeat: no-repeat;
     cursor: url("images/chred.png"), auto;
-
-
+    margin-top: -50px;
+    margin-left: 110px;
+    position: relative;
   }
 
 #scoreBoard {
-  width: 50px;
-  height: 50px;
-  border: 10px solid red;
+  font-size: 30px;
   position: absolute;
-  color: white;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+
+}
+#scoreBoard2 {
+  font-size: 30px;
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  color: red;
 
 }
 
 #countdown {
-    color: white;
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
-    text-decoration: none;
-    text-align: center;
+    float: right;
+    color: blue;
+
 }
