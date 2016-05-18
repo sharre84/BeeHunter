@@ -1,14 +1,36 @@
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+*::-moz-selection { background:transparent; }
+*::selection { background:transparent; }
+
 body {
     background-color: black;
     color: white;
+    font-family: 'Chewy', cursive;
 }
 
-button {
-  height: 60px;
+#start-game {
+  height: 50px;
   width: 75px;
   font-size: 15px;
   font-weight: bold;
-  margin-left: 40px;
+  margin-left: 10px;
+  float: left;
+}
+
+#reset {
+  height: 50px;
+  width: 75px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+  float: left;
 }
 
 img {

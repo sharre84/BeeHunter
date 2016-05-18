@@ -10,14 +10,21 @@ var game = {
   currentPlayer: null
 }
 
+var stopClick = function(){
+  document.getElementById('container').style.pointerEvents = 'none';
+}
+
 game.currentPlayer = game.player1
 
 function switchTurns() {
   if (game.currentPlayer == game.player1) {
     game.currentPlayer = game.player2;
   } else {
-
-    // invoke the check winner function
+    checkWinner()
+    $(".bee").stop()
+    stopClick()
+    temp = document.getElementById('countdown');
+    temp.innerHTML = "GAME OVER!";
   }
 }
 
@@ -50,7 +57,7 @@ function Bee(dateCreated){
   this.x = Math.round(Math.random() * 800);
   this.y = Math.round(Math.random() * 600);
 
-  container.append('<img src="images/bee123.gif">');
+  container.append('<img class="bee" src="images/bee123.gif">');
   this.$selector = $('img').last();
   this.$selector.attr('style', 'top:' + this.y + 'px;left:' + this.x + 'px;')
 
@@ -87,16 +94,13 @@ function Bee(dateCreated){
   })
 }
 
-
-var bee1 = new Bee(Date.now())
-var bee2 = new Bee(Date.now())
-var bee3 = new Bee(Date.now())
-var bee4 = new Bee(Date.now())
-
-
 // countdown timer
 function startGame(){
   $("#start-game").off("click")
+  var bee1 = new Bee(Date.now())
+  var bee2 = new Bee(Date.now())
+  var bee3 = new Bee(Date.now())
+  var bee4 = new Bee(Date.now())
 
   countdown();
 }
@@ -111,7 +115,7 @@ function countdown() {
   if (seconds == 1) {
     temp = document.getElementById('countdown');
     temp.innerHTML = "Next!";
-    alert("Press 'Start Game' for next player turn!")
+    // alert("Press 'Start Game' for next player turn!")
     switchTurns()
     return;
   }
@@ -123,3 +127,7 @@ function countdown() {
 }
 
 $("#start-game").on("click", startGame)
+
+$('#reset').click(function() {
+    location.reload();
+});
