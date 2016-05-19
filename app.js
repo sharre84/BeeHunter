@@ -11,6 +11,12 @@ var game = {
 }
 
 var myAudio = $("#mysoundclip")[0];
+var container = $("#container")
+var newPosY = Math.random() * 600;
+var newPosX = Math.random() * 800;
+var $scoreBoard = $('#scoreBoard')
+var $scoreBoard2 = $('#scoreBoard2')
+var counter = 0;
 
 var stopClick = function(){
   document.getElementById('container').style.pointerEvents = 'none';
@@ -22,31 +28,26 @@ function switchTurns() {
   if (game.currentPlayer == game.player1) {
     game.currentPlayer = game.player2;
   } else {
+    myAudio1.pause()
     checkWinner()
-    $(".bee").stop()
     stopClick()
+    clearAll()
     temp = document.getElementById('countdown');
     temp.innerHTML = "GAME OVER!";
+
   }
 }
 
-// function that checks for winner and announces winner
-
 var checkWinner = function(){
   if (game.player1.score > game.player2.score){
-    alert("Player 1 won!")}
-    else{
-      alert("Player 2 won!")
+    alert("Player 1 has won!")
+  } else if(game.player1.score == game.player2.score){
+      alert("It's a draw!")
+    }
+    else {
+      alert("Player 2 has won!")
     }
   }
-
-  var container = $("#container")
-  var newPosY = Math.random() * 600;
-  var newPosX = Math.random() * 800;
-
-  var $scoreBoard = $('#scoreBoard')
-  var $scoreBoard2 = $('#scoreBoard2')
-  var counter = 0;
 
   $("#container").parent().css({position: 'relative'});
   $("#container").css({top: 100, left: 100, position:'absolute'});
@@ -91,12 +92,10 @@ var checkWinner = function(){
           $('#countdown').html(15)
           countdown()
           counter ++
-
         }
       }
     })
   }
-
 
   function startGame(){
     $("#start-game").off("click")
@@ -105,6 +104,7 @@ var checkWinner = function(){
     var bee3 = new Bee(Date.now())
     var bee4 = new Bee(Date.now())
     var bee5 = new Bee(Date.now())
+    myAudio1.play();
 
     countdown();
   }
@@ -119,6 +119,7 @@ var checkWinner = function(){
     if (seconds == 1) {
       temp = document.getElementById('countdown');
       temp.innerHTML = "Next!";
+      alert("Time is up!")
       switchTurns()
       return;
     }
@@ -134,3 +135,20 @@ var checkWinner = function(){
   $('#reset').click(function() {
     location.reload();
   });
+
+var clearAll = function() {
+    clearAll = $('.bee').remove();
+  }
+
+  myAudio1 = new Audio('bee.mp3');
+  if (typeof myAudio1.loop == 'boolean')
+  {
+      myAudio1.loop = true;
+  }
+  else
+  {
+      myAudio1.addEventListener('ended', function() {
+          this.currentTime = 0;
+          this.play();
+      }, false);
+  }

@@ -6,6 +6,7 @@
     -ms-user-select: none;
     user-select: none;
 }
+
 *::-moz-selection { background:transparent; }
 *::selection { background:transparent; }
 
@@ -13,6 +14,22 @@ body {
     background-color: black;
     color: white;
     font-family: 'Chewy', cursive;
+}
+
+h3 {
+  font-size: 25px;
+  color: white;
+  margin-top: 75px;
+}
+
+img {
+  margin-left: 30px;
+  margin-top: 50px;
+  position: absolute;
+}
+
+h1 {
+  text-align: center;
 }
 
 #start-game {
@@ -39,16 +56,6 @@ body {
   background: purple;
 }
 
-img {
-  margin-left: 30px;
-  margin-top: 50px;
-  position: absolute;
-}
-
-h1 {
-  text-align: center;
-}
-
 #container {
     height: 724px;
     width: 1024px;
@@ -69,15 +76,14 @@ h1 {
   font-weight: bold;
   color: red;
   margin-left: 6px;
-
 }
+
 #scoreBoard2 {
   font-size: 30px;
   position: absolute;
   font-weight: bold;
   color: red;
   margin-left: 6px;
-
 }
 
 #countdown {
@@ -86,10 +92,4 @@ h1 {
     float: left;
     color: blue;
     margin-left: 6px;
-}
-
-h3 {
-  font-size: 25px;
-  color: white;
-  margin-top: 75px;
 }
