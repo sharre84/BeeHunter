@@ -34,7 +34,6 @@ function switchTurns() {
     clearAll()
     temp = document.getElementById('countdown');
     temp.innerHTML = "GAME OVER!";
-
   }
 }
 
@@ -104,8 +103,8 @@ var checkWinner = function(){
     var bee3 = new Bee(Date.now())
     var bee4 = new Bee(Date.now())
     var bee5 = new Bee(Date.now())
-    myAudio1.play();
 
+    myAudio1.play();
     countdown();
   }
 
@@ -140,12 +139,10 @@ var clearAll = function() {
     clearAll = $('.bee').remove();
   }
 
-  myAudio1 = new Audio('bee.mp3');
-  if (typeof myAudio1.loop == 'boolean')
-  {
+  myAudio1 = new Audio('sounds/bee.mp3');
+  if (typeof myAudio1.loop == 'boolean') {
       myAudio1.loop = true;
-  }
-  else
+  } else
   {
       myAudio1.addEventListener('ended', function() {
           this.currentTime = 0;
@@ -154,12 +151,12 @@ var clearAll = function() {
   }
 /// finished
 
-  function declareWinner(selector){
-  $(selector).fadeOut('slow', function(){
-      $(this).fadeIn('slow', function(){
-          declareWinner(this);
-      });
-  });
-  }
-
-  declareWinner('.declareWinner');
+  // function declareWinner(selector){
+  // $(selector).fadeOut('slow', function(){
+  //     $(this).fadeIn('slow', function(){
+  //         declareWinner(this);
+  //     });
+  // });
+  // }
+  //
+  // declareWinner('.declareWinner');

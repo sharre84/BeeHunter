@@ -18,18 +18,11 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 32px;
 }
 
 h2 {
   margin-left: 6px;
-}
-
-#sB {
-  margin-top: 28px;
-}
-
-#sB2 {
-  margin-top: -50px;
 }
 
 h3 {
@@ -44,8 +37,6 @@ img {
   margin-top: 50px;
   position: absolute;
 }
-
-
 
 #start-game {
   height: 50px;
@@ -110,4 +101,12 @@ img {
     color: blue;
     margin-left: 6px;
     margin-top: -15px
+}
+
+#sB {
+  margin-top: 28px;
+}
+
+#sB2 {
+  margin-top: -50px;
 }
