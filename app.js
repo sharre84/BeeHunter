@@ -152,3 +152,14 @@ var clearAll = function() {
           this.play();
       }, false);
   }
+/// finished
+
+  function declareWinner(selector){
+  $(selector).fadeOut('slow', function(){
+      $(this).fadeIn('slow', function(){
+          declareWinner(this);
+      });
+  });
+  }
+
+  declareWinner('.declareWinner');

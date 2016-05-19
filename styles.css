@@ -16,10 +16,27 @@ body {
     font-family: 'Chewy', cursive;
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-left: 6px;
+}
+
+#sB {
+  margin-top: 28px;
+}
+
+#sB2 {
+  margin-top: -50px;
+}
+
 h3 {
   font-size: 25px;
   color: white;
-  margin-top: 75px;
+  margin-top: -8px;
+  margin-left: 6px;
 }
 
 img {
@@ -28,9 +45,7 @@ img {
   position: absolute;
 }
 
-h1 {
-  text-align: center;
-}
+
 
 #start-game {
   height: 50px;
@@ -75,7 +90,8 @@ h1 {
   position: absolute;
   font-weight: bold;
   color: red;
-  margin-left: 6px;
+  margin-left: 151px;
+  margin-top: -53px;
 }
 
 #scoreBoard2 {
@@ -83,7 +99,8 @@ h1 {
   position: absolute;
   font-weight: bold;
   color: red;
-  margin-left: 6px;
+  margin-left: 154px;
+  margin-top: -54px;
 }
 
 #countdown {
@@ -92,4 +109,5 @@ h1 {
     float: left;
     color: blue;
     margin-left: 6px;
+    margin-top: -15px
 }
