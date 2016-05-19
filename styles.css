@@ -26,7 +26,7 @@ h2 {
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 32px;
   color: white;
   margin-top: -8px;
   margin-left: 6px;
@@ -36,6 +36,15 @@ img {
   margin-left: 30px;
   margin-top: 50px;
   position: absolute;
+}
+
+#timer-container {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 47px;
 }
 
 #start-game {
@@ -95,10 +104,10 @@ img {
 }
 
 #countdown {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
-    float: left;
-    color: blue;
+    /*float: left;*/
+    color: #00D8FF;
     margin-left: 6px;
     margin-top: -15px
 }
