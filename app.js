@@ -10,7 +10,7 @@ var game = {
   currentPlayer: null
 }
 
-var myAudio = $("#mysoundclip")[0];
+var beeSplat = $("#beeSplat")[0];
 var container = $("#container");
 var newPosY = Math.random() * 600;
 var newPosX = Math.random() * 800;
@@ -18,19 +18,14 @@ var $scoreBoard = $('#scoreBoard');
 var $scoreBoard2 = $('#scoreBoard2');
 var counter = 0;
 
-var stopClick = function(){
-  document.getElementById('container').style.pointerEvents = 'none';
-}
-
 game.currentPlayer = game.player1
 
 function switchTurns() {
   if (game.currentPlayer == game.player1) {
     game.currentPlayer = game.player2;
   } else {
-    myAudio1.pause()
+    soundLoop.pause()
     checkWinner()
-    stopClick()
     clearAll()
     temp = document.getElementById('countdown');
     temp.innerHTML = "GAME OVER!";
@@ -73,9 +68,9 @@ var checkWinner = function(){
     this.move()
 
     this.$selector.on('click', function(){
-      myAudio.pause()
-      myAudio.currentTime = 0;
-      myAudio.play();
+      beeSplat.pause()
+      beeSplat.currentTime = 0;
+      beeSplat.play();
       if(game.currentPlayer == game.player1) {
         game.player1.score ++
         new Bee(Date.now())
@@ -104,7 +99,7 @@ function startGame(){
   var bee4 = new Bee(Date.now())
   var bee5 = new Bee(Date.now())
 
-  myAudio1.play();
+  soundLoop.play();
   countdown();
 }
 
@@ -139,12 +134,12 @@ var clearAll = function() {
     clearAll = $('.bee').remove();
   }
 
-  myAudio1 = new Audio('sounds/bee.mp3');
-  if (typeof myAudio1.loop == 'boolean') {
-      myAudio1.loop = true;
+  soundLoop = new Audio('sounds/bee.mp3');
+  if (typeof soundLoop.loop == 'boolean') {
+      soundLoop.loop = true;
   } else
   {
-      myAudio1.addEventListener('ended', function() {
+      soundLoop.addEventListener('ended', function() {
           this.currentTime = 0;
           this.play();
       }, false);
