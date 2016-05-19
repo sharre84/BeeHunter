@@ -11,11 +11,11 @@ var game = {
 }
 
 var myAudio = $("#mysoundclip")[0];
-var container = $("#container")
+var container = $("#container");
 var newPosY = Math.random() * 600;
 var newPosX = Math.random() * 800;
-var $scoreBoard = $('#scoreBoard')
-var $scoreBoard2 = $('#scoreBoard2')
+var $scoreBoard = $('#scoreBoard');
+var $scoreBoard2 = $('#scoreBoard2');
 var counter = 0;
 
 var stopClick = function(){
@@ -96,17 +96,17 @@ var checkWinner = function(){
     })
   }
 
-  function startGame(){
-    $("#start-game").off("click")
-    var bee1 = new Bee(Date.now())
-    var bee2 = new Bee(Date.now())
-    var bee3 = new Bee(Date.now())
-    var bee4 = new Bee(Date.now())
-    var bee5 = new Bee(Date.now())
+function startGame(){
+  $("#start-game").off("click")
+  var bee1 = new Bee(Date.now())
+  var bee2 = new Bee(Date.now())
+  var bee3 = new Bee(Date.now())
+  var bee4 = new Bee(Date.now())
+  var bee5 = new Bee(Date.now())
 
-    myAudio1.play();
-    countdown();
-  }
+  myAudio1.play();
+  countdown();
+}
 
   var seconds;
   var temp;
@@ -149,14 +149,3 @@ var clearAll = function() {
           this.play();
       }, false);
   }
-/// finished
-
-  // function declareWinner(selector){
-  // $(selector).fadeOut('slow', function(){
-  //     $(this).fadeIn('slow', function(){
-  //         declareWinner(this);
-  //     });
-  // });
-  // }
-  //
-  // declareWinner('.declareWinner');
