@@ -68,7 +68,6 @@ var checkWinner = function(){
     this.move()
 
     this.$selector.on('click', function(){
-      beeSplat.pause()
       beeSplat.currentTime = 0;
       beeSplat.play();
       if(game.currentPlayer == game.player1) {
@@ -137,8 +136,7 @@ var clearAll = function() {
   soundLoop = new Audio('sounds/bee.mp3');
   if (typeof soundLoop.loop == 'boolean') {
       soundLoop.loop = true;
-  } else
-  {
+  } else {
       soundLoop.addEventListener('ended', function() {
           this.currentTime = 0;
           this.play();
