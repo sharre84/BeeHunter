@@ -133,7 +133,7 @@ var clearAll = function() {
     clearAll = $('.bee').remove();
   }
 
-  soundLoop = new Audio('sounds/Bee.mp3');
+  soundLoop = new Audio('sounds/bee.mp3');
   if (typeof soundLoop.loop == 'boolean') {
       soundLoop.loop = true;
   } else {
