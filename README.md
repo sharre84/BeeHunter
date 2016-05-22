@@ -1,6 +1,6 @@
 # _BeeHunter-project1_
 
-![Image](images/screen-shot.png)
+![screenshot](images/screen-shot.png)
 
 
 **Objectives** - Take turns shooting as many bees as you can with a 15 second timer!
